@@ -1,0 +1,29 @@
+<h1 style="color:bleu;">Blog index</h1>
+
+
+    <table class="table table-striped" border=2 align="center" >
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Description </th>
+            <th>Date</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for blog in blogs %}
+            <tr>
+                <td>{{ blog.id }}</td>
+                <td>{{ blog.title }}</td>
+                <td>{{ blog.description}}</td>
+                <td>{{ blog.date ? blog.datedate|date('Y-m-d') : '' }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>

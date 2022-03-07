@@ -1,0 +1,68 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Blog index{% endblock %}
+
+{% block body %}
+    <h1>Blog index</h1>
+<form method="post">   </blog> 
+    <input type="text" name="AfficherClasse" onkeyup="myFunction()" placeholder="Chercher un blog "  id="myInput" >
+    <a class="btn btn-success" href="{{path('imprimer') }}">  Exporter en pdf </a>
+    </form>
+    <table class="table" id="customers">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Image</th>
+                <th>Video</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for blog in blogs %}
+            <tr>
+                <td>{{ blog.id }}</td>
+                <td>{{ blog.title }}</td>
+                <td>{{ blog.description }}</td>
+                <td>{{ blog.date ? blog.date|date('Y-m-d') : '' }}</td>
+                <td>{{ blog.image }}</td>
+                <td>
+                    <a href="{{ path('blog_show', {'id': blog.id}) }}">show</a>
+                    <a href="{{ path('blog_edit', {'id': blog.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('blog_new') }}">Create new</a>
+
+<script> 
+       function myFunction() {
+  var input, filter, table, tr, td, i,j, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("customers");
+  tr = table.getElementsByTagName("tr");
+//   alert(td.length);
+  for (i = 0; i < tr.length; i++) {
+    td= tr[i].getElementsByTagName("td")[1];
+    
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }   
+  }  
+}
+</script>
+{% endblock %}
