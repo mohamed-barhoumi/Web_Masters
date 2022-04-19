@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.AfficherReponseController">
+   <children>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="105.0" layoutY="57.0" prefHeight="44.0" prefWidth="393.0" text="Détails de la réponse ajoutée" textFill="#007d66">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="135.0" layoutY="170.0" text="Titre" textAlignment="CENTER" textFill="#007d68">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="135.0" layoutY="221.0" text="Description" textFill="#007d68">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTitre" layoutX="300.0" layoutY="170.0" prefHeight="27.0" prefWidth="186.0" text="Label" />
+      <Label fx:id="lblDescription" layoutX="301.0" layoutY="224.0" prefHeight="27.0" prefWidth="167.0" text="Label" />
+      <Label alignment="TOP_CENTER" layoutX="135.0" layoutY="130.0" text="Id" textAlignment="CENTER" textFill="#007d68">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId" layoutX="300.0" layoutY="130.0" prefHeight="27.0" prefWidth="186.0" text="Label" />
+   </children>
+</AnchorPane>

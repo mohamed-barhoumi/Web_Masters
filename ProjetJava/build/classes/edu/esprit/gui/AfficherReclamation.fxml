@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AfficherReclamationController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="-7.0" layoutY="-10.0" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="95.0" layoutY="47.0" prefHeight="44.0" prefWidth="393.0" text="Détails de la réclamation ajoutée" textFill="#007d66">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="125.0" layoutY="160.0" text="Titre" textAlignment="CENTER" textFill="#007d68">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="125.0" layoutY="211.0" text="Réclamation" textFill="#007d68">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTitre" layoutX="290.0" layoutY="160.0" prefHeight="27.0" prefWidth="186.0" text="Label" />
+                  <Label fx:id="lblReclamation" layoutX="291.0" layoutY="214.0" prefHeight="27.0" prefWidth="167.0" text="Label" />
+                  <Button fx:id="btnModifier" layoutX="183.0" layoutY="290.0" mnemonicParsing="false" onAction="#modifierReclamation" style="-fx-background-color: #007d66;" text="Modifier">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSupprimer" layoutX="290.0" layoutY="290.0" mnemonicParsing="false" onAction="supprimerReclamation" style="-fx-background-color: #007d66;" text="Supprimer">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
