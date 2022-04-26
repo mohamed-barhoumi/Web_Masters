@@ -1,0 +1,58 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.Searsh-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius:100;
+
+}
+
+.transparent{
+    -fx-background-color:rgba(0,0,0,0);
+}
+
+.Searsh-button{
+    -fx-background-color:#820282;
+    -fx-background-radius:20;
+
+}
+
+.right-bar{
+    -fx-background-color:#D3D3D3;
+}
+
+.shadow{
+    -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.1),10.0,0.0,0.0,10.0);
+}
+
+.AddImage-button{
+    -fx-background-color:#7c3f9e;
+    -fx-background-radius:20;
+}
+
+.add-button{
+   -fx-background-color: #6a0aa6;
+   -fx-background-radius:20; 
+}
+
+.update-button{
+    -fx-background-radius:20;
+}
+.delete-button{
+    -fx-background-radius:20;
+}
+
+.LivraisonGrat-card{
+  -fx-background-color:#892fc2; 
+  -fx-background-radius:30;  
+}
+.AchatEnLigne-card{
+  -fx-background-color:#6a0aa6; 
+  -fx-background-radius:30;  
+}
+
+.Hbox-haut{
+  -fx-background-color: #6a0aa6;
+  -fx-background-radius:10;  
+}

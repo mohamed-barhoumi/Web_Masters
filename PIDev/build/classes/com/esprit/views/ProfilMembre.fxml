@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane2" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3d3242;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.ProfilMembreController">
+   <children>
+      <ImageView fitHeight="265.0" fitWidth="352.0" layoutX="387.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="25.0" layoutY="426.0" prefHeight="21.0" prefWidth="75.0" text="PRENOM :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="nom" layoutX="114.0" layoutY="424.0" prefHeight="25.0" prefWidth="199.0" />
+      <TextField fx:id="prenom" layoutX="114.0" layoutY="473.0" prefHeight="25.0" prefWidth="199.0" />
+      <TextField fx:id="pwd" layoutX="489.0" layoutY="424.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField fx:id="mail" layoutX="489.0" layoutY="470.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField fx:id="tel" layoutX="828.0" layoutY="436.0" prefHeight="25.0" prefWidth="161.0" />
+      <Button layoutX="649.0" layoutY="275.0" mnemonicParsing="false" onAction="#importImg" prefHeight="25.0" prefWidth="18.0" style="-fx-background-color: #9400d3;" text="Button" textFill="WHITE" />
+      <TextField fx:id="id" layoutX="108.0" layoutY="522.0" prefHeight="25.0" prefWidth="24.0" visible="false" />
+      <ImageView fx:id="img" fitHeight="265.0" fitWidth="352.0" layoutX="270.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="scr" layoutX="782.0" layoutY="332.0" visible="false" />
+      <Label layoutX="25.0" layoutY="472.0" prefHeight="21.0" prefWidth="75.0" text="NOM :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="350.0" layoutY="426.0" prefHeight="21.0" prefWidth="132.0" text="MOT DE PASSE :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="350.0" layoutY="472.0" prefHeight="21.0" prefWidth="75.0" text="E-MAIL :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="713.0" layoutY="437.0" prefHeight="21.0" prefWidth="104.0" text="TELEPHONE :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="upd" layoutX="828.0" layoutY="70.0" mnemonicParsing="false" onAction="#upd" prefHeight="53.0" prefWidth="111.0" style="-fx-background-color: #9400d3;" text="Mise a jour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="acceuilbtn" layoutX="25.0" layoutY="17.0" mnemonicParsing="false" onAction="#ActionAcceuilbtn" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #6a0aa6;" text="Acceuil" textFill="WHITE" />
+   </children>
+</AnchorPane>
