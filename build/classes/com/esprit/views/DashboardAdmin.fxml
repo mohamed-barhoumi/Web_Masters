@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3d3242;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.DashboardAdminController">
+   <children>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/275391527_370191808075140_4696120332349711585_n.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="100.0" prefWidth="20.0" />
+      <Label layoutX="90.0" layoutY="15.0" text="Dashboard" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="40.0" />
+         </font>
+      </Label>
+     
+     
+     
+  
+
+   
+      <Button layoutX="416.0" layoutY="30.0" mnemonicParsing="false" onAction="#Utilisateur" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Utilisateurs" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button fx:id="logobnt1" layoutX="870.0" layoutY="15.0" mnemonicParsing="false" onAction="#Actionlog" prefHeight="48.0" prefWidth="94.0" style="-fx-background-color: #9400d3;" text="LogOut" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="18.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Button>
+   
+   </children>
+</AnchorPane>
