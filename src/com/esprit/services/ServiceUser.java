@@ -248,7 +248,7 @@ liste.stream().map((item) -> {
                 u.setTel_user(rs.getInt("tel_user"));
                 u.setEmail_user(rs.getString("email_user"));
                 u.setMdp_user(rs.getString("mdp_user"));
-
+                u.setRole(rs.getString("role"));
                 list.add(u);
             }
         } catch (SQLException ex) {

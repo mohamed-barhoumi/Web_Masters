@@ -8,6 +8,7 @@ package com.esprit.views;
 import com.esprit.modeles.Membre;
 import com.esprit.modeles.User;
 import com.esprit.services.ServiceUser;
+import com.esprit.utils.DataSource;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
@@ -21,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -50,7 +52,9 @@ import net.glxn.qrgen.image.ImageType;
  * @author elbarhoumi
  */
 public class SingUpMembreController implements Initializable {
-
+    Connection cnx = DataSource.getInstance().getCnx();
+    public static final String ACCOUNT_SID = "AC20022854457aec468ffdc56b98e25a37";
+    public static final String AUTH_TOKEN = "4972dad758476be1f11c27cfe9a09352";
     @FXML
     private Button add_membre_btn;
     @FXML
@@ -80,8 +84,7 @@ public class SingUpMembreController implements Initializable {
     private Scene scene;
     private Parent root;
 
-    public static final String ACCOUNT_SID = "ACd3d0d4b5a338f627cac6f0a71f9851d7";
-    public static final String AUTH_TOKEN = "bd8e9d382e7643ed17fc75e54062d1c3";
+   
   
     @FXML
    
@@ -139,11 +142,7 @@ public class SingUpMembreController implements Initializable {
 
         } 
           if (tel_membre.getText().length()!=8) 
-              /*((tel_membre.getText().length()!=8) && ( tel_membre.getText().substring(1, 2) !="90") &&(tel_membre.getText().substring(1, 2)!="91") &&(tel_membre.getText().substring(1, 2)!="92") &&(tel_membre.getText().substring(1, 2)!="93") &&(tel_membre.getText().substring(1, 2)!="94") &&(tel_membre.getText().substring(1, 2)!="95")&&(tel_membre.getText().substring(1, 2)!="96") &&(tel_membre.getText().substring(1, 2)!="97") &&(tel_membre.getText().substring(1, 2)!="98") &&(tel_membre.getText().substring(1, 2)!="99")
-                   &&(tel_membre.getText().substring(1, 2)!="40")&&(tel_membre.getText().substring(1, 2)!="41")&&(tel_membre.getText().substring(1, 2)!="42")&&(tel_membre.getText().substring(1, 2)!="44")
-                   &&(tel_membre.getText().substring(1, 2)!="50")&&(tel_membre.getText().substring(1, 2)!="51") && (tel_membre.getText().substring(1, 2)!="52") &&(tel_membre.getText().substring(1, 2)!="53") &&(tel_membre.getText().substring(1, 2)!="54") &&(tel_membre.getText().substring(1, 2)!="55")  &&(tel_membre.getText().substring(1, 2)!="58")  
-                   &&(tel_membre.getText().substring(1, 2)!="29") &&(tel_membre.getText().substring(1, 2)!="28") &&(tel_membre.getText().substring(1, 2)!="27")&&(tel_membre.getText().substring(1, 2)!="26") &&(tel_membre.getText().substring(1, 2)!="25") &&(tel_membre.getText().substring(1, 2)!="24") &&(tel_membre.getText().substring(1, 2)!="23") &&(tel_membre.getText().substring(1, 2)!="22")&&(tel_membre.getText().substring(1, 2)!="21")&&(tel_membre.getText().substring(1, 2)!="20") )
-                  */{
+            {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erreur");
             alert.setContentText("Invalid phone number ");
@@ -160,46 +159,7 @@ public class SingUpMembreController implements Initializable {
             return;
         }
 
-      /*  if (email_membre.getText().isEmpty()
-                || !email_membre.getText().contains("@")
-                || !email_membre.getText().contains(".")
-                || email_membre.getText().indexOf("#", 0) >= 0
-                || email_membre.getText().indexOf("&", 0) >= 0
-                || email_membre.getText().indexOf("(", 0) >= 0
-                || email_membre.getText().indexOf("Â§", 0) >= 0
-                || email_membre.getText().indexOf("!", 0) >= 0
-                || email_membre.getText().indexOf("Ã§", 0) >= 0
-                || email_membre.getText().indexOf("Ã ", 0) >= 0
-                || email_membre.getText().indexOf("Ã©", 0) >= 0
-                || email_membre.getText().indexOf(")", 0) >= 0
-                || email_membre.getText().indexOf("{", 0) >= 0
-                || email_membre.getText().indexOf("}", 0) >= 0
-                || email_membre.getText().indexOf("|", 0) >= 0
-                || email_membre.getText().indexOf("$", 0) >= 0
-                || email_membre.getText().indexOf("*", 0) >= 0
-                || email_membre.getText().indexOf("â‚¬", 0) >= 0
-                || email_membre.getText().indexOf("`", 0) >= 0
-                || email_membre.getText().indexOf("\'", 0) >= 0
-                || email_membre.getText().indexOf("\"", 0) >= 0
-                || email_membre.getText().indexOf("%", 0) >= 0
-                || email_membre.getText().indexOf("+", 0) >= 0
-                || email_membre.getText().indexOf("=", 0) >= 0
-                || email_membre.getText().indexOf("/", 0) >= 0
-                || email_membre.getText().indexOf("\\", 0) >= 0
-                || email_membre.getText().indexOf(":", 0) >= 0
-                || email_membre.getText().indexOf(",", 0) >= 0
-                || email_membre.getText().indexOf("?", 0) >= 0
-                || email_membre.getText().indexOf(";", 0) >= 0
-                || email_membre.getText().indexOf("Â°", 0) >= 0
-                || email_membre.getText().indexOf("<", 0) >= 0
-                || email_membre.getText().indexOf(">", 0) >= 0) {
-
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Erreur");
-            alert.setContentText("Invalid mail !");
-            alert.showAndWait();
-            return;
-        }*/
+          
         if (mdp_membre.getText().isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -226,9 +186,14 @@ public class SingUpMembreController implements Initializable {
             return;
         }
         User m = new Membre(prenom_membre.getText(), nom_membre.getText(), Integer.parseInt(tel_membre.getText()), email_membre.getText(), mdp_membre.getText(),src.getText());
-      //  sp.ajouter(m);
+    
       if(sp.existeMail(m)==0){
       sp.ajouter(m);
+       Twilio.init(ACCOUNT_SID,AUTH_TOKEN);
+        Message message = Message.creator(new PhoneNumber("+216"+m.getTel_user()),
+                    new PhoneNumber("+19378073301"),
+                    "Salut Mr/Mme," + m.getNom_user() + " " + m.getPrenom_user() +
+                            "Votre inscription est reussi avec succes ").create();
       CodeQr(event);
           Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("User Added Successfully");

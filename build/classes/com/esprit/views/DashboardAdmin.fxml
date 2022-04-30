@@ -28,7 +28,7 @@
   
 
    
-      <Button layoutX="416.0" layoutY="30.0" mnemonicParsing="false" onAction="#Utilisateur" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Utilisateurs" textFill="WHITE">
+      <Button layoutX="420.0" layoutY="50.0" mnemonicParsing="false" onAction="#Utilisateur" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Utilisateurs" textFill="WHITE">
          <font>
             <Font name="Ebrima Bold" size="20.0" />
          </font>
@@ -43,6 +43,46 @@
          <effect>
             <Glow />
          </effect></Button>
+      <Button layoutX="420.0" layoutY="235.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Commandes" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button layoutX="420.0" layoutY="420.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="226.0" style="-fx-background-color: #9400d3;" text="Gérer Reclamations" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button layoutX="130.0" layoutY="235.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Produits" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button layoutX="130.0" layoutY="420.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Blogs" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button layoutX="710.0" layoutY="235.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="206.0" style="-fx-background-color: #9400d3;" text="Gérer Evenements" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
    
    </children>
 </AnchorPane>

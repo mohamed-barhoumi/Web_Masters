@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -83,6 +85,8 @@ public class Gestion_userController implements Initializable {
     @FXML
     private TableColumn<User, String> cl_role;
     @FXML
+    private TableColumn<User, String> cl_role_user1;
+    @FXML
     private TextField pass;
     @FXML
     private Button add;
@@ -94,6 +98,7 @@ public class Gestion_userController implements Initializable {
     private Button pdf;
     
     ServiceUser sp = new ServiceUser();
+   
 
      
     @Override
@@ -124,7 +129,7 @@ public  void showUser(){
          tel.setText(""+user.getTel_user());
          mail.setText(""+user.getEmail_user());
         // pass.setText(""+user.getMdp_user());
-        //pass.setDisable(true);
+        pass.setDisable(true);
          id.setDisable(true);
          
     }
@@ -139,7 +144,7 @@ public  void showUser(){
         if (result == JOptionPane.YES_OPTION) {
          User a = new User(id_u,nom.getText(), prenom.getText(), Integer.parseInt(tel.getText()));
         sp.modifier(a);
-                        JOptionPane.showMessageDialog(null, "User modified successfully");
+                        JOptionPane.showMessageDialog(null, "Utilisateur modifié avec succés ");
 
         showUser();
         } else if (result == JOptionPane.NO_OPTION) {
@@ -159,13 +164,13 @@ public  void showUser(){
         int result = JOptionPane.showConfirmDialog(null, "Vous etes sure de Supprimer  cet utilisateur" ,"SERIOUS QUESTION", options, 3);
         if (result == JOptionPane.YES_OPTION) {
         sp.supprimer(a);
-        JOptionPane.showMessageDialog(null, "User deleted successfully");
+        JOptionPane.showMessageDialog(null, "Utilisateur supprimé avec succés");
          
         showUser();
         } else if (result == JOptionPane.NO_OPTION) {
                             
 
-                   //System.out.println("User deleted");
+              System.out.println("Utilisateur supprimé");
 
             showUser();
         } 
@@ -182,7 +187,7 @@ public  void showUser(){
     cl_prenom_user1.setCellValueFactory(new PropertyValueFactory<>("prenom_user"));
     cl_tel_user1.setCellValueFactory(new PropertyValueFactory<>("tel_user"));
     cl_email_user1.setCellValueFactory(new PropertyValueFactory<>("email_user"));
-   
+     cl_role_user1.setCellValueFactory(new PropertyValueFactory<>("role"));
     table1.setItems(list);
     }
     
@@ -213,10 +218,16 @@ public  void showUser(){
          prenom.setText(""+user.getPrenom_user());
          tel.setText(""+user.getTel_user());
          mail.setText(""+user.getEmail_user());
-         
+           pass.setDisable(true);
          id.setDisable(true);
     }
-
+ private boolean verifemail (String email)
+    {
+       String e ="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
+       Pattern em = Pattern.compile(e, Pattern.CASE_INSENSITIVE);
+       Matcher matcher = em.matcher(email);
+        return matcher.find();
+    }
     @FXML
     private void ADD(ActionEvent event) {
         
@@ -245,39 +256,7 @@ public  void showUser(){
             return;
 
         }
-        if (mail.getText().isEmpty()
-                || !mail.getText().contains("@")
-                || !mail.getText().contains(".")
-                || mail.getText().indexOf("#", 0) >= 0
-                || mail.getText().indexOf("&", 0) >= 0
-                || mail.getText().indexOf("(", 0) >= 0
-                || mail.getText().indexOf("Ã‚Â§", 0) >= 0
-                || mail.getText().indexOf("!", 0) >= 0
-                || mail.getText().indexOf("ÃƒÂ§", 0) >= 0
-                || mail.getText().indexOf("ÃƒÂ ", 0) >= 0
-                || mail.getText().indexOf("ÃƒÂ©", 0) >= 0
-                || mail.getText().indexOf(")", 0) >= 0
-                || mail.getText().indexOf("{", 0) >= 0
-                || mail.getText().indexOf("}", 0) >= 0
-                || mail.getText().indexOf("|", 0) >= 0
-                || mail.getText().indexOf("$", 0) >= 0
-                || mail.getText().indexOf("*", 0) >= 0
-                || mail.getText().indexOf("Ã¢â€šÂ¬", 0) >= 0
-                || mail.getText().indexOf("`", 0) >= 0
-                || mail.getText().indexOf("\'", 0) >= 0
-                || mail.getText().indexOf("\"", 0) >= 0
-                || mail.getText().indexOf("%", 0) >= 0
-                || mail.getText().indexOf("+", 0) >= 0
-                || mail.getText().indexOf("=", 0) >= 0
-                || mail.getText().indexOf("/", 0) >= 0
-                || mail.getText().indexOf("\\", 0) >= 0
-                || mail.getText().indexOf(":", 0) >= 0
-                || mail.getText().indexOf(",", 0) >= 0
-                || mail.getText().indexOf("?", 0) >= 0
-                || mail.getText().indexOf(";", 0) >= 0
-                || mail.getText().indexOf("Ã‚Â°", 0) >= 0
-                || mail.getText().indexOf("<", 0) >= 0
-                || mail.getText().indexOf(">", 0) >= 0) {
+        if (verifemail(mail.getText())== false) {
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erreur");
@@ -301,7 +280,7 @@ public  void showUser(){
           sp.ajouter(m);
           JOptionPane.showMessageDialog(null, " Logisticien added successfully");
 
-       // SendSms();
+      
          showUser();
         
     }
@@ -315,7 +294,7 @@ public  void showUser(){
           pass.setText("");
          mail.setText("");
          id.setDisable(true);
-        // pass.setDisable(true);
+        pass.setDisable(false);
     }
 
     @FXML
@@ -324,6 +303,7 @@ public  void showUser(){
         rootPane.getChildren().setAll(pane);  
     }
 
+    @FXML
      public void generatePDF() throws IOException, DocumentException {
         FileChooser fileChooser = new FileChooser();
 

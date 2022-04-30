@@ -11,14 +11,14 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3d3242;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.views.Gestion_userController">
    <children>
-      <TableView fx:id="table" layoutX="264.0" layoutY="98.0" onMouseClicked="#handleMouseAction" prefHeight="407.0" prefWidth="437.0" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="98.0">
+      <TableView fx:id="table" layoutX="264.0" layoutY="98.0" onMouseClicked="#handleMouseAction" prefHeight="405.0" prefWidth="725.0" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="98.0">
         <columns>
-          <TableColumn fx:id="cl_id_user" prefWidth="41.0" text="ID" />
-          <TableColumn fx:id="cl_nom_user" prefWidth="108.79998779296875" text="NOM" />
-            <TableColumn fx:id="cl_prenom_user" prefWidth="87.99993896484375" text="PRENOM" />
-            <TableColumn fx:id="cl_tel_user" prefWidth="86.39996337890625" text="TELEPHONE" />
-            <TableColumn fx:id="cl_email_user" prefWidth="247.20001220703125" text="E-mail" />
-            <TableColumn fx:id="cl_role" prefWidth="149.5999755859375" text="Role" />
+          <TableColumn fx:id="cl_id_user" prefWidth="41.0" text="ID" visible="false" />
+          <TableColumn fx:id="cl_nom_user" prefWidth="139.20001220703125" text="NOM" />
+            <TableColumn fx:id="cl_prenom_user" prefWidth="92.79998779296875" text="PRENOM" />
+            <TableColumn fx:id="cl_tel_user" prefWidth="107.20001220703125" text="TELEPHONE" />
+            <TableColumn fx:id="cl_email_user" prefWidth="221.60003662109375" text="E-mail" />
+            <TableColumn fx:id="cl_role" prefWidth="159.199951171875" text="Role" />
         </columns>
       </TableView>
       <TextField fx:id="prenom" layoutX="40.0" layoutY="150.0" prefHeight="25.0" prefWidth="190.0" promptText="Prenom.." />
@@ -74,13 +74,14 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TableView fx:id="table1" layoutX="299.0" layoutY="95.0" onMouseClicked="#handleMouseAction1" prefHeight="407.0" prefWidth="415.0" visible="false" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="85.0">
+      <TableView fx:id="table1" layoutX="261.0" layoutY="98.0" onMouseClicked="#handleMouseAction1" prefHeight="405.0" prefWidth="725.0" visible="false" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="98.0">
          <columns>
-            <TableColumn fx:id="cl_id_user1" prefWidth="47.20001220703125" text="Id_user" />
+            <TableColumn fx:id="cl_id_user1" prefWidth="47.20001220703125" text="Id_user" visible="false" />
             <TableColumn fx:id="cl_nom_user1" prefWidth="118.39996337890625" text="nom_user" />
             <TableColumn fx:id="cl_prenom_user1" prefWidth="132.800048828125" text="prenom_user" />
             <TableColumn fx:id="cl_tel_user1" prefWidth="148.0" text="tel_user" />
-            <TableColumn fx:id="cl_email_user1" prefWidth="251.20001220703125" text="email_user" />
+            <TableColumn fx:id="cl_email_user1" prefWidth="212.0" text="email_user" />
+            <TableColumn fx:id="cl_role_user1" prefWidth="112.20001220703125" text="role_user" />
          </columns>
       </TableView>
       <TextField fx:id="pass" layoutX="40.0" layoutY="390.0" prefHeight="25.0" prefWidth="190.0" promptText="Mot de passe.." />

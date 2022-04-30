@@ -8,7 +8,9 @@ package com.esprit.views;
 import com.esprit.modeles.User;
 import com.esprit.services.ServiceUser;
 import com.esprit.utils.DataSource;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.CopyOption;
@@ -34,6 +36,8 @@ import javafx.scene.layout.AnchorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import net.glxn.qrgen.QRCode;
+import net.glxn.qrgen.image.ImageType;
  
 /**
  * FXML Controller class
@@ -90,8 +94,8 @@ public class ProfilMembreController implements Initializable {
          User a = new User(id_u,nom.getText(), prenom.getText(), Integer.parseInt(tel.getText()) ,  mail.getText() , scr.getText() );
          sp.modifier(a);
        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("User Modified Successfully");
-                        alert.setContentText("Felecitation");
+            alert.setTitle("L'utilisateur a été modifié avec succés !");
+                        alert.setContentText("Félécitation");
 
             alert.showAndWait();
         } else if (result == JOptionPane.NO_OPTION) {
@@ -150,7 +154,9 @@ public class ProfilMembreController implements Initializable {
              scr.setText(to.toString());
         
     }
-      return to.toString(); 
+        affichpdp();
+      return to.toString();      
+
     }
         public void affichpdp() {
         String Id_stat = mail.getText();
@@ -206,10 +212,26 @@ public class ProfilMembreController implements Initializable {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../views/InterfaceMembre.fxml"));
         rootPane2.getChildren().setAll(pane);
     }
-
+ private void CodeQr(ActionEvent event) {
+        String Id_stat = nom.getText();
+        String LoginCode = mail.getText() ;
+        ByteArrayOutputStream out = QRCode.from(LoginCode)
+                .to(ImageType.PNG).stream();
+        String f_name = Id_stat;
+        String Path_name = new File("src/QrCode/").getAbsolutePath();
+        try {
+            FileOutputStream fout = new FileOutputStream(new File(Path_name + "/" + (f_name + ".PNG")));
+            fout.write(out.toByteArray());
+            fout.flush();
+            System.out.println(Path_name);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     @FXML
     private void qrAction(ActionEvent event) {
-           affichImage();
+        CodeQr(event);  
+        affichImage();
     }
          
     }
