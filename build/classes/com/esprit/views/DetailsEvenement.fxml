@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.esprit.views.DetailsEvenementController">
+   <children>
+      <ImageView fx:id="imagelab" fitHeight="139.0" fitWidth="180.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="36.0" layoutY="180.0" prefHeight="28.0" prefWidth="77.0" text="Titre" textFill="#d30b0b" />
+      <Label layoutX="37.0" layoutY="229.0" prefHeight="17.0" prefWidth="49.0" text="Prix" textFill="#d30b0b" />
+      <Label fx:id="Titrelab" layoutX="133.0" layoutY="172.0" prefHeight="45.0" prefWidth="77.0" text="Label" />
+      <Label fx:id="Prixlab" layoutX="132.0" layoutY="229.0" prefHeight="17.0" prefWidth="49.0" text="Label" />
+      <Label layoutX="36.0" layoutY="250.0" prefHeight="17.0" prefWidth="49.0" text="Le" textFill="#d30b0b" />
+      <Label fx:id="dateDlab" layoutX="132.0" layoutY="250.0" prefHeight="17.0" prefWidth="93.0" text="Label" />
+      <Label layoutX="35.0" layoutY="209.0" prefHeight="17.0" prefWidth="65.0" text="Description" textFill="#d30b0b" />
+      <Label fx:id="Dcplab" layoutX="130.0" layoutY="209.0" prefHeight="17.0" prefWidth="111.0" text="Label" />
+      <Label layoutX="36.0" layoutY="276.0" prefHeight="17.0" prefWidth="49.0" text="Place" textFill="#d30b0b" />
+      <Label fx:id="Placelab" layoutX="132.0" layoutY="276.0" prefHeight="17.0" prefWidth="93.0" text="Label" />
+   </children>
+</AnchorPane>

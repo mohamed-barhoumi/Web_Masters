@@ -1,0 +1,35 @@
+<?php //App%255CEntity%255CFormation%2524dateDebut
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'type' => [
+                'datetime',
+            ],
+            'precision' => [
+                null,
+            ],
+            'scale' => [
+                null,
+            ],
+            'message' => [
+                1 => 'You must select a Start Date for your Course !',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];
